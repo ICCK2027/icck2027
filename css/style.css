@@ -1,0 +1,702 @@
+/* ============================================================
+   ICCK WEBSITE — STYLESHEET
+   ============================================================
+   HOW TO RE-THEME THE SITE:
+   Change the values inside :root below and the whole site updates.
+   You don't need to touch the rest of the file for basic edits.
+============================================================ */
+
+:root {
+  /* ---- Colours ---- */
+  --color-primary: #1d4b9b;      /* main brand colour (buttons, headings) 1f4e8c*/
+  --color-primary-dark: #15387C;  /* darker shade for hover states 16375f*/
+  --color-accent: #e8a33d;        /* accent colour (highlights, eyebrows) */
+  --color-bg: #ffffff;            /* page background */
+  --color-bg-alt: #f4f6f9;        /* background for alternating sections */
+  --color-text: #2b2f36;          /* body text */
+  --color-text-light: #6b7280;    /* muted text (captions, subtitles) */
+  --color-border: #e3e7ec;        /* table borders */
+
+  /* ---- Typography ---- */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-body);
+
+  /* ---- Layout ---- */
+  --container-max: 1100px;        /* max width of the content column */
+  --radius: 8px;                  /* corner rounding for cards/buttons */
+}
+
+/* ------------------------------------------------------------
+   RESET — removes browser default spacing so we control it all.
+------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding is inside the element width */
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling when clicking nav links */
+  /* scroll-padding stops the fixed header covering section titles */
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ------------------------------------------------------------
+   PAGE VISIBILITY
+   Only one <section class="page"> is visible at a time.
+   js/main.js toggles the ".active" class when you click a nav item.
+------------------------------------------------------------ */
+main > .page {
+  display: none;
+}
+
+main > .page.active {
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   LAYOUT HELPERS
+------------------------------------------------------------ */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;          /* centre the column */
+  padding: 0 24px;         /* side breathing room on small screens */
+}
+
+/* A generic content section */
+.section {
+  padding: 72px 0;
+}
+
+/* Alternate background for visual rhythm (used on even sections) */
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+}
+
+.subsection-title {
+  font-size: 1.25rem;
+  margin: 32px 0 12px;
+  color: var(--color-primary-dark);
+}
+
+.section p {
+  margin-bottom: 16px;
+  max-width: 75ch; /* keep lines a comfortable reading length */
+}
+
+/* ------------------------------------------------------------
+   HEADER / NAVIGATION
+------------------------------------------------------------ */
+.site-header {
+  position: sticky;          /* stays pinned to the top */
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Brand / logo area */
+.brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+
+.brand-edition {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* The nav links */
+.site-nav {
+  display: flex;
+  width: 100%;
+  gap: 22px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent; /* underline appears on hover */
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* The nav banner */
+.site-header {
+  position: static;
+}
+
+.site-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Highlight the nav link of the section currently shown */
+.site-nav a.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+
+
+/* ------------------------------------------------------------
+   HERO
+------------------------------------------------------------ */
+.hero {
+  /* Gradient background — change the two hex values to re-colour it */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 120px 0;
+}
+
+.hero-eyebrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.full-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 24px 0;
+}
+
+/* ------------------------------------------------------------
+   BUTTONS
+------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #1a1a1a;
+}
+
+.btn-primary:hover {
+  background: #d18f2c; /* darker accent — adjust if you change --color-accent */
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ------------------------------------------------------------
+   TABLES (important dates, program, registration fees)
+------------------------------------------------------------ */
+.table-wrap {
+  overflow-x: auto;   /* lets wide tables scroll on small screens */
+  margin: 24px 0;
+}
+
+.dates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dates-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dates-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dates-table td:first-child {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+/* Larghezze delle colonne del programma */
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.program-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.program-table td:first-child {
+  width: 20%;
+  white-space: normal;
+}
+
+.program-table td:nth-child(2) {
+  width: 35%;
+}
+
+.program-table td:nth-child(3) {
+  width: 10%;
+}
+
+.program-table td:nth-child(4) {
+  width: 35%;
+}
+/* ------------------------------------------------------------
+   SUBMISSION STEPS (call for papers)
+------------------------------------------------------------ */
+.submission-content {
+  margin: 6px 0 12px;
+  padding-left: 20px;
+  max-width: 75ch;
+}
+
+.submission-content li {
+  margin-bottom: 4px;
+}
+
+.submission-content a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.submission-content em {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   TOPICS LIST (call for papers)
+------------------------------------------------------------ */
+.topics-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.topics-list li {
+  background: var(--color-bg-alt);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   KEYNOTE SPEAKERS GRID
+------------------------------------------------------------ */
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.speaker-card {
+  text-align: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: box-shadow 0.15s;
+}
+
+.speaker-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Placeholder box where a photo goes. Replace [Photo] with <img> later. */
+.speaker-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 0.85rem;
+}
+
+.speaker-name {
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+}
+
+.speaker-affil {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   COMMITTEE LIST
+------------------------------------------------------------ */
+.committee-list {
+  list-style: none;
+  margin: 12px 0 24px;
+}
+
+.committee-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.committee-list li:last-child {
+  border-bottom: none;
+}
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.committee-card {
+  text-align: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: box-shadow 0.15s;
+}
+
+.committee-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Placeholder box where a photo goes. Replace [Photo] with <img> later. */
+.committee-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 0.85rem;
+}
+
+.committee-name {
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+}
+
+.committee-affil {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   VENUE
+------------------------------------------------------------ */
+.venue-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.venue-text {
+  flex: 1;
+  min-width: 0;
+  max-width: 60ch;
+  text-align: justify;
+}
+
+.venue-image {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* On mobile image goes below the text */
+@media (max-width: 600px) {
+  .uno-layout {
+    flex-direction: column;
+  }
+}
+
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------ */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   BACK-TO-TOP BUTTON
+------------------------------------------------------------ */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /* hidden by default; JS adds the .visible class when you scroll */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE — mobile styles
+------------------------------------------------------------ */
+@media (max-width: 768px) {
+  /* Stack the header: brand left, hamburger right */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide the nav by default; slide it down when .open is added */
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--color-border);
+    display: none;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+}
+
+.home-about {
+  margin-top: 48px;
+  padding: 24px;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+}
+
+.home-about .section-title {
+  color: #e8a33d;
+  text-align: left;
+}
+
+.home-about p {
+  color: #fff;
+  text-align: justify;
+  line-height: 1.8;
+}
+.topics-title {
+  margin-top: 40px;
+}
+
+body:has(#home.active) #headerBanner {
+  display: none !important;
+}
+
+#home .home-banner {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 100%;
+  margin: 0 24px 32px;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+#home .home-banner > img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sfuma i bordi dell’immagine verso il blu dello sfondo */
+#home .home-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: inset 0 0 28px 14px var(--banner-blue);
+}
+
+/* Pulsanti sovrapposti, centrati in basso */
+#home .home-banner .hero-actions {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px;
+  margin: 0;
+  padding: 0 16px;
+}
+
+.about-image {
+  position: relative;
+}
+
+#home .about-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* Sfuma i bordi dell’immagine verso il blu dello sfondo */
+#home .about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: inset 0 0 28px 14px var(--banner-blue);
+}
+
+#home {
+  --banner-blue: #1d4b9b;
+}
+/* Wing Tsang Award */
+.award-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 295px;
+  gap: 40px;
+  align-items: center;
+}
+.award-intro .subsection-title { margin-top: 0; }
+.award-medal { text-align: center; }
+.award-medal img { display: block; width: 100%; max-width: 295px; height: auto; margin: 0 auto 12px; }
+.award-medal figcaption { font-size: 0.85rem; color: var(--color-text-light); }
+.award-deadline { padding: 16px 20px; background: var(--color-bg-alt); border-left: 4px solid var(--color-accent); }
+#wing-tsang-award a { color: var(--color-primary); overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+  .award-intro { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .award-medal img { max-width: 240px; }
+}

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     14th ICCK WEBSITE 
+     ============================================================
+     This is a single-page site. Every section is marked with a
+     <section id="..."> and linked from the navigation bar at the top.
+
+     HOW TO EDIT:
+     1. The CSS lives in css/style.css — colours/fonts are at the very
+        top of that file, so you can re-theme the whole site in one place.
+     2. The small JS file js/main.js handles the mobile menu, smooth
+        scrolling and the "back to top" button. You rarely need to touch it.
+
+     To preview: right-click this file in VS Code -> "Open with Live Server",
+     or just double-click index.html to open it in your browser.
+============================================================ -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport makes the site responsive on phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set the page title and description for search engines -->
+  <title>14th International Conference on Chemical Kinetics — 2027</title>
+  <meta name="description" content="Official website of the 14th ICCK, June 13–18, 2027, Milan, Italy.">
+
+  <!-- Link to our stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================
+       HEADER / NAVIGATION BAR
+       Stays pinned to the top while you scroll.
+  =========================================================== -->
+
+  <div class="container site-banner" id="headerBanner">
+    <img src="pictures/ICCK2027_banner.jpg" alt="ICCK2027 banner">
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Brand / logo area. TODO: add your logo or just text
+      <a href="#home" class="brand">
+        <span class="brand-name">14th ICCK</span>
+        <span class="brand-edition">2027 · Milan, Italy</span>
+      </a> -->
+
+      <!-- Hamburger button — shown only on mobile, toggled by js/main.js -->
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Main navigation. Add/remove <a> links to match your sections. -->
+      <nav class="site-nav" id="siteNav">
+        <a href="#home">Home</a>
+        <a href="#dates">Important Dates</a>
+        <a href="#cfp">Call for Abstracts</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#wing-tsang-award">Wing Tsang Award</a>
+        <a href="#committees">Committees</a>
+        <a href="#program">Program</a>
+        <a href="#registration">Registration</a>
+        <a href="#venue">Venue</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================
+         HERO — the big banner at the very top.
+    =========================================================== -->
+    <section id="home" class="hero page active">
+      <div class="container">
+        <!--
+        <p class="hero-eyebrow">June 13–18, 2027</p>
+        <h1 class="hero-title">14th International Conference on Chemical Kinetics</h1>
+        <p class="hero-subtitle">
+          Politecnico di Milano, Milan, Italy
+        </p>-->
+
+        <!-- Banner con pulsanti integrati -->
+        <div class="home-banner">
+          <img src="pictures/ICCK2027_banner.jpg" alt="ICCK2027 banner">
+
+          <!-- Call-to-action buttons. Point them at your real links later. -->
+          <div class="hero-actions">
+            <a href="#registration" class="btn btn-primary">Register</a>
+            <a href="https://submitabs.mzevents.it/evento/G0t7tMHuEIGOfpFQjFHbHO2Al7Suo3MRcwJmgTOWqJA" class="btn btn-outline">Submit an abstract</a>
+          </div>
+        </div>
+        <div class="container home-about">
+
+          <h2 class="section-title">About the Conference</h2>
+          <p>
+            Since its first edition in 1985, the International Conference
+            on Chemical Kinetics (ICCK) has brought together researchers from universities,
+            research laboratories, and industry to discuss advances and challenges in the
+            experiment, theory, and modeling of chemical kinetics.
+
+            ICCK provides a unique cross-disciplinary forum centered on the fundamental
+            understanding of elementary reactions and reaction mechanisms, connecting communities
+            that investigate chemical transformations under remarkably different conditions—from
+            gases and liquids to plasmas, surfaces, and solid materials.
+
+            The 14th ICCK, hosted by Politecnico di Milano, will continue this tradition while
+            highlighting the increasingly important role of chemical kinetics in addressing
+            challenges in energy, sustainability, the environment, and advanced materials.
+
+            We look forward to welcoming the international chemical kinetics community to Milan in June 2027.
+            <br><br><br>
+          </p>
+          <div class="about-image">
+            <img class="full-image" src="pictures/facciata_polimi_crop.jpg" alt="facciata polimi">
+          </div>
+        </div>
+        <!-- <img class="full-image" src="pictures/facciata_polimi.jpg" alt="facciata polimi"> -->
+
+    </section>
+
+    <!-- ==========================================================
+         IMPORTANT DATES — a simple table of deadlines.
+         TODO: swap in your real deadlines. Delete rows you don't need.
+    =========================================================== -->
+    <section id="dates" class="section section-alt page">
+      <div class="container">
+        <h2 class="section-title">Important Dates</h2>
+        <div class="table-wrap">
+          <table class="dates-table">
+            <tbody>
+              <tr>
+                <td>Abstract submission opens</td>
+                <td>November 1 2026</td>
+              </tr>
+              <tr>
+                <td>Submission deadline</td>
+                <td>February 15 2027</td>
+              </tr>
+              <tr>
+                <td>Registrations open</td>
+                <td>December 1 2026</td>
+              </tr>
+              <tr>
+                <td>Early bird registrations end</td>
+                <td>April 15 2027</td>
+              </tr>
+              <tr>
+                <td>Standard registrations end</td>
+                <td>June 1 2027</td>
+              </tr>
+              <tr>
+                <td>On-site registrations end</td>
+                <td>June 13 2027</td>
+              </tr>
+              <tr>
+                <td>Conference</td>
+                <td>June 13-18 2027</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Authors will be notified by <strong>March 15 2027, or shortly after,</strong>
+          whether their abstract has been accepted for an oral presentation
+          or a poster presentation, or has not been accepted.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CALL FOR ABSTRACTS — topics and submission info.
+    =========================================================== -->
+    <section id="cfp" class="section page">
+      <div class="container">
+        <p>
+        <h2 class="section-title ">Call for abstracts</h2>
+
+        <!-- Topics list. TODO: replace with your real topic areas. -->
+        <h3 class="subsection-title">Topics of Interest</h3>
+        <p>
+          ICCK 2027 welcomes experimental, theoretical, and modeling
+          contributions across the broad field of chemical kinetics, including:
+        </p>
+
+        <h4 style="margin-top: 24px;">1. Homogeneous gas-phase kinetics</h4>
+        <ul>
+          <li>Combustion and energy conversion</li>
+          <li>Atmospheric and environmental chemistry</li>
+          <li>Interstellar and planetary chemistry</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">2. Liquid- and solution-phase kinetics</h4>
+        <ul>
+          <li>Homogeneous catalysis</li>
+          <li>Polymer chemistry and polymer reaction engineering</li>
+          <li>Aqueous and non-aqueous reaction kinetics</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">3. Heterogeneous and surface kinetics</h4>
+        <ul>
+          <li>Heterogeneous catalysis</li>
+          <li>Surface reactions and interfaces</li>
+          <li>Chemical vapor deposition and materials synthesis</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">4. Plasma and ion kinetics</h4>
+        <ul>
+          <li>Plasma chemistry</li>
+          <li>Ion–molecule and charged-species kinetics</li>
+          <li>Plasma-assisted processes</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">5. Solid- and condensed-phase kinetics</h4>
+        <ul>
+          <li>Thermal decomposition and pyrolysis</li>
+          <li>Chemical recycling and waste conversion</li>
+          <li>Energetic materials</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">6. Cross-cutting methods and approaches</h4>
+        <ul>
+          <li>Industrial applications of chemical kinetics</li>
+          <li>Experimental methods and advanced diagnostics</li>
+          <li>Theoretical and computational chemical kinetics</li>
+          <li>Kinetic mechanism development and automated kinetics</li>
+          <li>Data-driven methods and machine learning</li>
+          <li>Uncertainty quantification and model reduction</li>
+          <li>Simulation of chemical reactors</li>
+        </ul>
+        </p>
+
+        <h3 class="subsection-title">Submission Guidelines</h3>
+        <p>
+          Abstracts will be submitted through a portal.<br>
+          Presentation and poster submissions follow the same format. Selection between the two is available in the
+          portal.<br>
+          <br>
+          Abstracts should include:
+        </p>
+        <ol class="submission-content">
+          <li>
+            Authors and presenter
+          <li>
+            Introduction
+          </li>
+          <li>
+            Methods
+          </li>
+          <li>
+            Results
+          </li>
+          <li>
+            Conclusions
+          </li>
+          <li>
+            References (format: [1] A. B. Smith, Int. J. Chem. Kin., volume number, page/article number (year).)
+          </li>
+          <li>
+            Max one image, horizontal format
+          </li>
+        </ol>
+        Total length:
+        <ul>
+          <li>without image: maximum 4000 characters (spaces included), approximately 600 words;</li>
+          <li>with image: maximum 3000 characters (spaces included), approximately 450 words.</li>
+        </ul>
+        <br>
+        <a href="https://submitabs.mzevents.it/evento/G0t7tMHuEIGOfpFQjFHbHO2Al7Suo3MRcwJmgTOWqJA" class="btn btn-primary">Submit an abstract</a>
+        </p>
+
+        <h3 class="subsection-title">Poster format</h3>
+        <p>
+        <ul>
+          <li>Posters must be in A0 size, (841 mm W × 1189 mm H) in portrait orientation</li>
+          <li>Landscape format is not permitted due to poster boards</li>
+          <li>Presenters are required to print and bring their own posters to the conference</li>
+        </ul>
+        </p> <!--4' x 8' = 48" x 96" = 120 cm x 240 cm-->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+          SPEAKERS — a grid of cards.
+         TODO: add a real photo, name and affiliation per speaker.
+    =========================================================== -->
+    <section id="speakers" class="section section-alt page">
+      <div class="container">
+        <h2 class="section-title"> Speakers</h2>
+
+        <!-- Plenary speakers -->
+        <h3 class="subsection-title">Plenary Speakers</h3>
+        <p>Plenary speakers will be announced soon</p>
+
+        <div class="speaker-grid">
+
+          <!-- Copy this card for each speaker -->
+          <!--
+          <article class="speaker-card">
+            <div class="speaker-photo">[Photo]</div>
+            <h3 class="speaker-name">
+              <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>
+            </h3>
+            <p class="speaker-affil">[Affiliation, Country]</p>
+            <p class="speaker-talk"><em>[Plenary Talk Title]</em></p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo">[Photo]</div>
+            <h3 class="speaker-name">
+              <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>
+            </h3>
+            <p class="speaker-affil">[Affiliation, Country]</p>
+            <p class="speaker-talk"><em>[Plenary Talk Title]</em></p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo">[Photo]</div>
+            <h3 class="speaker-name">
+              <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>
+            </h3>
+            <p class="speaker-affil">[Affiliation, Country]</p>
+            <p class="speaker-talk"><em>[Plenary Talk Title]</em></p>
+          </article>
+          -->
+        </div>
+
+        <!-- Keynote speakers -->
+        <h3 class="subsection-title">Keynote Speakers</h3>
+        <p>Keynote speakers will be announced soon</p>
+
+        <ul class="Keynote-speakers-list">
+
+          <!-- Copia questo blocco per ogni Keynote speaker -->
+          <!-- 
+          <li>
+            <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>,
+            [Affiliation], Country]<br>
+            <em>[title]</em>
+          </li>
+          <li>
+            <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>,
+            [Affiliation], Country]<br>
+            <em>[title]</em>
+          </li>
+          <li>
+            <a href="[SPEAKER PROFILE URL]">[Speaker Name]</a>,
+            [Affiliation], Country]<br>
+            <em>[title]</em>
+          </li>
+          -->
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         COMMITTEE — organisers / program committee members.
+    =========================================================== -->
+    <section id="wing-tsang-award" class="section page" aria-labelledby="wing-tsang-title">
+      <div class="container">
+        <h2 id="wing-tsang-title" class="section-title">Wing Tsang Award</h2>
+        <div class="award-intro">
+          <div>
+            <h3 class="subsection-title">Wing Tsang Early Career Award</h3>
+            <p>The Wing Tsang Early Career Award recognizes the contributions of an early career researcher in the field of chemical kinetics. This prestigious award is presented biennially at the ICCK meeting, during which the recipient will also present the Wing Tsang Early Career Investigator Plenary Lecture.</p>
+            <p>The award recognizes excellence in chemical kinetics research, the potential for future leadership in the field, and service to the kinetics community.</p>
+          </div>
+          <figure class="award-medal">
+            <img src="pictures/wingtsang.png" alt="Medal of the Wing Tsang Early Career Award" width="295" height="292">
+            <figcaption>Wing Tsang Early Career Award medal</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="subsection-title">About Wing Tsang</h3>
+        <p>The award is named in honor of <a href="https://nistdigitalarchives.contentdm.oclc.org/digital/collection/p16009coll3/id/135/rec/352" target="_blank" rel="noopener noreferrer">Wing Tsang</a> (1935–2026), a pioneer in chemical kinetics investigations and a founder, together with John T. Herron, of the <a href="https://nvlpubs.nist.gov/nistpubs/jres/090/jresv90n5p389_A1b.pdf" target="_blank" rel="noopener noreferrer">International Conference on Chemical Kinetics in 1985</a>.</p>
+        <p>Wing Tsang’s outstanding technical contributions to chemical kinetics during his 51-year career at the National Institute of Standards and Technology (NIST) centered on combustion chemistry and shock tube experiments. His leadership was also key in creating the <a href="https://pubs.aip.org/aip/jpr/article/51/2/021501/2846159" target="_blank" rel="noopener noreferrer">evaluated chemical kinetics databases</a> that continue to have tremendous impact on the broader kinetics community.</p>
+
+        <h3 class="subsection-title">Criteria for the Wing Tsang Early Career Award</h3>
+        <ul class="submission-content">
+          <li>The awardee must be an early career investigator within 10 years of their terminal degree as of the conference date.</li>
+          <li>The awardee’s research interests should be in one or several aspects (experimental, theoretical, and modeling) of fundamental or applied chemical kinetics.</li>
+          <li>The awardee must have been an active participant in past ICCK conferences.</li>
+          <li>The awardee must demonstrate research excellence and impact in fundamental or applied chemical kinetics, the potential for future leadership, and service to the chemical kinetics community.</li>
+          <li>The awardee must be available to present the Wing Tsang Plenary Lecture at the ICCK conference.</li>
+        </ul>
+
+        <h3 class="subsection-title">Timeline and nomination instructions</h3>
+        <p class="award-deadline"><strong>Nomination deadline: <time datetime="2027-02-01">February 1, 2027</time></strong></p>
+        <p>Nomination packages should include:</p>
+        <ul class="submission-content">
+          <li>A short CV (no more than 2 pages).</li>
+          <li>A list of up to 5 most influential publications.</li>
+          <li>A letter of nomination (maximum of 2 pages).</li>
+          <li>One supporting letter (maximum of 2 pages).</li>
+        </ul>
+        <p>Nomination packages should be sent to Craig Taatjes, chair of the Wing Tsang Award Committee, at <a href="mailto:cataatj@sandia.gov">cataatj@sandia.gov</a>.</p>
+        <p><strong>Self-nominations are not permitted.</strong> Members of the ICCK Standing Committee may not nominate or support a candidate.</p>
+
+        <h3 class="subsection-title">Support the award</h3>
+        <p>Donations are being solicited to fund this award for the next 20 years, in honor of Wing Tsang and to encourage excellence in chemical kinetics. For information about making a donation, please contact the ICCK Treasurer, Bill Green, at <a href="mailto:whgreen@mit.edu">whgreen@mit.edu</a>.</p>
+      </div>
+    </section>
+
+    <section id="committees" class="section page">
+      <div class="container">
+        <h2 class="section-title">Committees</h2>
+        <h3 class="subsection-title">Program chairs</h3>
+        <div class="committee-grid">
+
+          <!-- Copy this card for each committee member -->
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/carlo_cavallotti.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Carlo Cavallotti</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/matteo_pelucchi.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Matteo Pelucchi</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+        </div>
+        <!--
+        <ul class="committee-list">
+          <li>Carlo Cavallotti, Politecnico di Milano, Italy</li>
+          <li>Matteo Pelucchi, Politecnico di Milano, Italy</li>
+        </ul>
+        -->
+        <h3 class="subsection-title">Local organising committee</h3>
+        <div class="committee-grid">
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/marco_mehl.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Marco Mehl</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/davide_moscatelli.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Davide Moscatelli</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/luna_pratalimaffei.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Luna Pratali Maffei</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/maristella_diteodoro.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Maristella Di Teodoro</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/gianvito_vile.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Gianvito Vilè</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/mattia_sponchioni.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Mattia Sponchioni</p>
+            </h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/daniela_polino.jpg" alt="Picture"></div>
+            <h3 class="committee-name">
+              <p>Daniela Polino</p>
+            </h3>
+            <p class="committee-affil">Scuola universitaria professionale della Svizzera italiana (SUPSI), Switzerland</p>
+          </article>
+        </div>
+        <!--
+        <ul class="committee-list">
+          <li>Marco Mehl, Politecnico di Milano, Italy</li>
+          <li>Gianvito Vilè, Politecnico di Milano, Italy</li>
+          <li>Davide Moscatelli, Politecnico di Milano, Italy</li>
+          <li>Mattia Sponchioni, Politecnico di Milano, Italy</li>
+          <li>Daniela Polino, SUPSI, Switzerland</li>
+          <li>Luna Pratali Maffei, Politecnico di Milano, Italy</li>
+          <li>Maristella Di Teodoro, Politecnico di Milano, Italy</li>
+        </ul>
+        -->
+
+        <h3 class="subsection-title">Scientific advisory committee</h3>
+        <div class="committee-grid">
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/cristina_puzzarini.jpg" alt="Cristina Puzzarini"></div>
+            <h3 class="committee-name">Cristina Puzzarini</h3>
+            <p class="committee-affil">Università di Bologna (UniBo), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/annemie_bogaerts.jpg" alt="Annemie Bogaerts"></div>
+            <h3 class="committee-name">Annemie Bogaerts</h3>
+            <p class="committee-affil">University of Antwerp, Belgium</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/amir_farooq.jpg" alt="Aamir Farooq"></div>
+            <h3 class="committee-name">Aamir Farooq</h3>
+            <p class="committee-affil">King Abdullah University of Science and Technology (KAUST), Saudi Arabia</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/alessio_frassoldati.jpg" alt="Alessio Frassoldati"></div>
+            <h3 class="committee-name">Alessio Frassoldati</h3>
+            <p class="committee-affil">Politecnico di Milano (PoliMi), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/mara_dejoannon.png" alt="Mara De Joannon"></div>
+            <h3 class="committee-name">Mara De Joannon</h3>
+            <p class="committee-affil">Consiglio Nazionale delle Ricerche (CNR) – Istituto di Scienze e Tecnologie per l’Energia e la Mobilità Sostenibili (STEMS), Italy</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/alexander_mebel.jpg" alt="Alexander Mebel"></div>
+            <h3 class="committee-name">Alexander Mebel</h3>
+            <p class="committee-affil">Florida International University (FIU), USA</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/bin_yang.jpg" alt="Bin Yang"></div>
+            <h3 class="committee-name">Bin Yang</h3>
+            <p class="committee-affil">Tsinghua University, China</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/yuyang_li.jpg" alt="Yuyang Li"></div>
+            <h3 class="committee-name">Yuyang Li</h3>
+            <p class="committee-affil">Shanghai Jiao Tong University (SJTU), China</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/paul_seakins.jpg" alt="Paul Seakins"></div>
+            <h3 class="committee-name">Paul Seakins</h3>
+            <p class="committee-affil">University of Leeds, UK</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/niels_hansen.jpg" alt="Nils Hansen"></div>
+            <h3 class="committee-name">Nils Hansen</h3>
+            <p class="committee-affil">Sandia National Laboratories (SNL), USA</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/raghu_sivaramakrishnan.jpeg" alt="Raghu Sivaramakrishnan"></div>
+            <h3 class="committee-name">Raghu Sivaramakrishnan</h3>
+            <p class="committee-affil">Argonne National Laboratory (ANL), USA</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/nuria_lopez.jpg" alt="Nùria Lopez"></div>
+            <h3 class="committee-name">Nùria Lopez</h3>
+            <p class="committee-affil">Institute of Chemical Research of Catalonia (ICIQ), Spain</p>
+          </article>
+
+          <article class="committee-card">
+            <div class="committee-photo"><img src="pictures/dmitry_murzin.jpg" alt="Dmitry Murzin"></div>
+            <h3 class="committee-name">Dmitry Murzin</h3>
+            <p class="committee-affil">Åbo Akademi University, Finland</p>
+          </article>
+        </div>
+        <!--
+          <ul class="committee-list">
+            <li>[Name] — [Affiliation]</li>
+            <li>[Name] — [Affiliation]</li>
+            <li>[Name] — [Affiliation]</li>
+          </ul>
+          -->
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PROGRAM — schedule overview. TODO: expand into a full
+         day-by-day schedule if you need one.
+    =========================================================== -->
+    <section id="program" class="section section-alt page">
+      <div class="container">
+        <h2 class="section-title">Technical program</h2>
+        <p>The detailed program will be available here soon</p>
+        <div class="table-wrap">
+          <table class="program-table">
+            <tbody>
+              <tr>
+                <td></td>
+                <td><strong>Morning</strong></td>
+                <td></td>
+                <td><strong>Afternoon</strong></td>
+              </tr>
+              <tr>
+                <td>Day 1 — June 13th</td>
+                <td></td>
+                <td>Lunch</td>
+                <td> Welcome reception</td>
+              </tr>
+              <tr>
+                <td>Day 2 — June 14th</td>
+                <td>Welcome, plenary, oral presentations</td>
+                <td>Lunch</td>
+                <td>Oral presentations, poster presentations and happy hour</td>
+              </tr>
+              <tr>
+                <td>Day 3 — June 15th</td>
+                <td>Plenary, oral presentations</td>
+                <td>Lunch</td>
+                <td>Wing Tsang plenary, oral presentations, poster presentations and happy hour</td>
+              </tr>
+              <tr>
+                <td>Day 4 — June 16th</td>
+                <td>Plenary, oral presentations
+                <td>Lunch</td>
+                <td>Excursion</td>
+              </tr>
+              <tr>
+                <td>Day 5 — June 17th</td>
+                <td>Plenary, oral presentations</td>
+                <td>Lunch</td>
+                <td>Oral presentations, social dinner </td>
+              </tr>
+              <tr>
+                <td>Day 6 — June 18th</td>
+                <td>Plenary, oral presentations</td>
+                <td>Lunch</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         REGISTRATION — fees and link.
+    =========================================================== -->
+    <section id="registration" class="section page">
+      <div class="container">
+        <h2 class="section-title">Registration</h2>
+        <div class="table-wrap">
+          <table class="dates-table">
+            <tbody>
+              <tr>
+                <td>Regular, early bird, registering by April 15 2027</td>
+                <td>€ 650</td>
+              </tr>
+              <tr>
+                <td>Regular, standard, registering between April 15 2027 and June 1 2027</td>
+                <td>€ 750</td>
+              </tr>
+              <tr>
+                <td>Regular, on-site, registering after June 1 2027</td>
+                <td>€ 900</td>
+              </tr>
+              <tr>
+                <td>Student, early bird, registering by April 15 2027</td>
+                <td>€ 450</td>
+              </tr>
+              <tr>
+                <td>Student, standard, registering between April 15 2027 and June 1 2027</td>
+                <td>€ 550</td>
+              </tr>
+              <tr>
+                <td>Student, on-site, registering after June 1 2027</td>
+                <td>€ 650</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="html/register_from.html" class="btn btn-primary">Register</a>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         VENUE — location, address, how to get there.
+    =========================================================== -->
+    <section id="venue" class="section section-alt page">
+      <div class="container">
+
+        <div class="venue-layout">
+          <div class="venue-text">
+            <h2 class="section-title">Conference venue</h2>
+            <p>
+              <strong>Politecnico di Milano</strong><br>
+              Campus Leonardo (Città Studi), building 13<br>
+              Via Edoardo Bonardi 9<br>
+              Milan, 20133, Italy<br>
+              <a href="https://www.google.com/maps/search/?api=1&query=PoliMi+·+Edificio+13+(Trifoglio)" target="_blank"
+                rel="noopener noreferrer">
+                Open on Google Maps
+              </a>
+              <br><br>
+              The conference will be held at Politecnico di Milano, in building 13 (“Trifoglio”),
+              shown on the map. Access to the building is from via Bonardi. Plenary sessions will
+              be held on the second floor, while other sessions and the poster sessions will be
+              held on the ground floor
+            </p>
+          </div>
+
+          <img class="venue-image" src="pictures/mappa_leonardo_box.jpg" alt="Politecnico map">
+        </div>
+
+        <br> <br>
+
+        <h2 class="section-title">Travel</h2>
+        <p>How to reach the venue by public transport:<br>
+          <br>
+          <strong>By train</strong>
+          <br>
+        </p>
+        <ul>
+          <li>From central station (centrale FS): take the green line at the train station (direction:
+            gessate / cologno nord) and stop in Piola.<br>
+            The venue is then 5 min on foot away. </li>
+        </ul>
+        <p>
+          <br>
+          <strong>By plane</strong>
+          <br>
+        </p>
+        <ul>
+          <li>From Malpensa: take the Malpensa express train (approx. 50 min) to the central
+            station (centrale FS), then take the green line at the train station (direction:
+            gessate / cologno nord) and stop in Piola.<br>
+            The venue is then 5 min on foot away. </li>
+          <li>From Orio al Serio (Bergamo): take the bus (approx. 1 hour) to Milan central
+            station, then take the green line at the train station (direction: gessate /
+            cologno nord) and stop in Piola. <br>
+            The venue is then 5 min on foot away.</li>
+          <li>From Linate: take the blue line (M4), stop at Argonne (< 10 min), then take bus 93 and stop in Via Celoria
+              (istituto besta). The venue is then 8-10 min on foot away. Alternatively, take the blue line (M4), stop at
+              Susa (< 10 min), then take bus 91 and stop in Viale Romagna-Via Pascoli. <br>
+              The venue is 6 min on foot away.
+          </li>
+        </ul>
+        <!-- TODO: embed a Google Map <iframe> here if useful -->
+        <img class="full-image" src="pictures/trifoglio.jpg" alt="Edificio 13">
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CONTACT — email and any social links.
+    =========================================================== -->
+    <section id="contacts" class="section page">
+      <div class="container">
+        <h2 class="section-title">Contacts</h2>
+        <p>
+          For any questions, contact the organisers at
+          <a href="mailto: ICCK2027@mzevents.it">ICCK2027@mzevents.it</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+  =========================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>14th International Conference on Chemical Kinetics</p>
+    </div>
+  </footer>
+
+  <!-- "Back to top" button — appears after scrolling, wired up in js/main.js -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Our small script (loaded at the end so the page renders first) -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
