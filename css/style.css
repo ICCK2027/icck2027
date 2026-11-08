@@ -508,7 +508,7 @@ main > .page.active {
 
 /* On mobile image goes below the text */
 @media (max-width: 600px) {
-  .uno-layout {
+  .venue-layout {
     flex-direction: column;
   }
 }
@@ -699,4 +699,48 @@ body:has(#home.active) #headerBanner {
 @media (max-width: 768px) {
   .award-intro { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .award-medal img { max-width: 240px; }
+}
+
+/* Responsive layout: keep navigation and actions in normal flow. */
+.header-inner { height: auto; min-height: 72px; padding-top: 12px; padding-bottom: 12px; }
+.site-nav { column-gap: 20px; row-gap: 8px; }
+.site-nav a { white-space: nowrap; }
+.committee-photo img, .speaker-photo img { object-fit: cover; }
+.committee-card, .speaker-card { min-width: 0; overflow-wrap: anywhere; }
+.section a { overflow-wrap: anywhere; }
+
+@media (max-width: 1024px) {
+  #home .home-banner .hero-actions { gap: 24px; }
+  .venue-layout { flex-direction: column; }
+  .venue-image { width: 100%; max-width: 600px; }
+  .venue-text { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .container { padding-left: 20px; padding-right: 20px; }
+  .header-inner { flex-wrap: wrap; justify-content: flex-end; min-height: 64px; }
+  .nav-toggle { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .site-nav { position: static; flex-basis: 100%; width: 100%; padding-top: 8px; border-bottom: 0; }
+  .site-nav a { display: block; width: 100%; text-align: left; padding: 12px 4px; }
+  .hero { padding: 24px 0 40px; }
+  #home .home-banner { width: 100%; margin: 0 0 28px; }
+  #home .home-banner::after { display: none; }
+  #home .home-banner .hero-actions {
+    position: static; flex-direction: column; align-items: stretch;
+    gap: 12px; margin-top: 24px; padding: 0;
+  }
+  .btn { text-align: center; max-width: 100%; min-height: 48px; }
+  .home-about { margin-top: 28px; padding: 0; }
+  .home-about p, .venue-text { text-align: left; }
+  .home-about p { line-height: 1.7; }
+  .section-title { font-size: 1.75rem; line-height: 1.25; overflow-wrap: anywhere; }
+  .section { padding: 36px 0; }
+  .section ul, .section ol { padding-left: 20px; }
+  .committee-grid, .speaker-grid { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+  .topics-list { grid-template-columns: minmax(0, 1fr); }
+  .dates-table td { padding: 12px 8px; vertical-align: top; }
+  .dates-table td:first-child { white-space: normal; }
+  .program-table { min-width: 560px; }
+  .table-wrap { max-width: 100%; -webkit-overflow-scrolling: touch; }
+  .back-to-top { right: 16px; bottom: 16px; }
 }
